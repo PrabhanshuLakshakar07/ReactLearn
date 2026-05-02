@@ -77,6 +77,15 @@ rafce: it generate arrow function component
    -Render:
    -componentDidMount:
 
-2 update phases
+2 update phases : dom manupilation
+ -shouldcomponentUpdate
+ -getSnapShotBeforeUpdate()
+ -Render
+ -componentDidUpdate
 3 unMounting phases
+  -componenetWillUnmount
 4 error phase
+1. getDerivedStateFromError:
+2. componentDidCatchy
+
+////////Rounting//////////
