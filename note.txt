@@ -1,0 +1,82 @@
+//how to crate react project by using npm
+npm install -g create-react-app
+create-react-app myproject
+cd myproject
+npm project
+
+component
+
+NOTE: While creating react component file its name startwish capital letter. use suffix comp in component
+file name.
+
+npm start - it will start project in developement mode and display in developement mode and display projectoutput
+
+type of componenets
+function component:it is use when our main focus is on design
+class component: when we need to write complex logic.
+
+
+jsx:-
+What is JSX?
+JSX stands for JavaScript XML. It allows us to write HTML-like code directly inside JavaScript. It’s the "Skeleton" of your React components.
+🗝️ The 4 Golden Rules of JSX:
+To build your Signup and Login pages without errors, remember these:
+
+//1->The "One Parent" Rule (Fragments):
+You cannot return multiple top-level elements. You must wrap them in a single parent, like a div or an empty tag <> called a Fragment.
+2->JavaScript Inside { }:
+Any valid JavaScript (variables, math, functions) must be wrapped in curly braces inside your HTML.
+Attributes Change Names:
+Since JSX is JavaScript, some HTML attributes are slightly different to avoid conflicts with JS keywords:
+
+class becomes className
+
+for becomes htmlFor
+
+onclick becomes onClick (CamelCase is mandatory)
+
+Self-Closing Tags:
+In HTML, you could leave <img...> or <input...> open. In JSX, every tag must be closed.
+
+///////Props/////
+In React, Props are the way we pass data from one component (the Parent) to another component (the Child). Think of it like passing an argument to a function.
+-
+
+////state
+
+
+note:- in function component we can use state by using usestate hook
+
+how to change state data in class components
+setState
+
+///////////////////////Method And Event ////////
+
+///child to parent data send data by Props
+
+//use of snepet
+rce=it generate class component
+rconst: it generate constructor with super keyword and state
+rafce: it generate arrow function component
+
+//conditional Rendering///
+
+
+/// use od short circuit -> && : If condition is true then only 
+
+
+///errorBoundary:-
+1. getDerivedStateFromError:
+2. componentDidCatchy
+
+///classLifeCycleComp.js
+--it comes with four phases
+1 mounting phases
+  -constructor:- 
+   -getDerivedStateFromProps:
+   -Render:
+   -componentDidMount:
+
+2 update phases
+3 unMounting phases
+4 error phase
