@@ -1,0 +1,13 @@
+.circle{
+    border: 5px solid blue;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-color: rgb(0, 255, 208);
+    transition: transform 5s;
+  
+}
+.circle:hover{
+    background-color: rgb(255, 181, 141);
+      transform: rotate(350deg);
+}   
