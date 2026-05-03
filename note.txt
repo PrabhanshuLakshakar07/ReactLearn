@@ -89,3 +89,10 @@ rafce: it generate arrow function component
 2. componentDidCatchy
 
 ////////Rounting//////////
+
+
+///
+src folder
+   layoutfolder
+      NavComp.js    fc
+      etc...
