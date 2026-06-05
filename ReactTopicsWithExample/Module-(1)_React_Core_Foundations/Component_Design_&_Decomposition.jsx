@@ -58,7 +58,19 @@ function ProjectDashboard() {
 export default ProjectDashboard;
 
 
-// Practice Exercise
+// //////////////////////////////////////// Practice Exercise////////////////////
+
+// Brother, did you understand the theory and architecture? Now it's time to get your brain checked.
+
+// Suppose you 're designing a component for an e-commerce product pageProductPage . You need to create a large component, but don't write it directly, but break it down into two smaller sub-components :
+
+// First, create a small component that simply returns ProductHeaderthe product name ( h1) and rating ( ).span
+
+// Create a second small component that returns ProductActiona Price ( p) and a "Buy Now" ( ).button
+
+// Finally, create a main component ProductPagethat calls both of these sub-components within a single parent tag.
+
+// Please write down the structure of this code. Remember, component names should always begin with a capital letter !
 
 import React from 'react';
 
@@ -123,3 +135,15 @@ function ProductPage() {
 }
 
 export default ProductPage;
+
+
+
+// +------------------------------------------+
+// |  Sony WH-1000XM4 Headphones              |  <-- (H1 Bada aur Bold Heading)
+// |  ⭐ 4.8 (2,500 reviews)                  |  <-- (Rating chote aksharon mein)
+// |                                          |
+// |  --------------------------------------  |  <-- (Divider Line)
+// |                                          |
+// |  Price: ₹24,990                          |  <-- (Bold Price Text)
+// |  [ Buy Now ]                             |  <-- (Orange rang ka Amazon style Button)
+// +------------------------------------------+
