@@ -12,3 +12,4 @@ Topic 3: Components & Elements (React Element aur React Component mein kya farq 
 Topic 4: Props Deep Dive (Props-drilling, props.children (composition), Read-only nature of props, Default props, aur Prop validation/TypeScript intro).
 
 ____________________________
+![Uploading Gemini_Generated_Image_o5xas6o5xas6o5xa (1).png…]()
