@@ -28,3 +28,8 @@ Topic 7 — Event Handling & Synthetic Events.
 Topic 7: useEffect Deep Dive (Lifecycle phases: Mount, Update, Unmount. Dependency array ka sahi use aur Memory Leaks/Cleanup functions).
 
 Topic 8: Custom Hooks Design Pattern (UI se saari business logic nikal kar ek clean, reusable hook mein daalna).
+
+
+
+<img width="1536" height="1024" alt="module2" src="https://github.com/user-attachments/assets/e8af0799-daca-4119-8cb4-bbbf864d24af" />
+
