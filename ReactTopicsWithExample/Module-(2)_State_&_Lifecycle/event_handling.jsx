@@ -1,51 +1,65 @@
 import React, { useState } from 'react';
 
-function TaskForm() {
-  const [taskName, setTaskName] = useState("");
+function MasterEventManager() {
+  const [text, setText] = useState("");
 
-  // 1. INPUT CHANGE HANDLER
-  const handleInputChange = (event) => {
-    // event.target.value se hume input mein type kiya hua latest text milta hai
-    setTaskName(event.target.value);
+  // 1. INPUT CHANGE (React ka onChange = HTML ka oninput)
+  const handleChange = (e) => {
+    setText(e.target.value);
+    
+    // Test Property: Synthetic vs Native Access
+    console.log("React Object Name:", e.constructor.name); // SyntheticBaseEvent
+    console.log("Asli Browser Event:", e.nativeEvent);      // InputEvent
   };
 
-  // 2. FORM SUBMIT HANDLER
-  const handleFormSubmit = (event) => {
-    // ⚠️ Sabsé Zaroori Line: Browser ko page refresh karne se rokna
-    event.preventDefault(); 
-    
-    if (taskName.trim() === "") {
-      alert("Task name cannot be empty!");
-      return;
-    }
+  // 2. FORM SUBMIT (Asynchronous & PreventDefault Test)
+  const handleSubmit = (e) => {
+    e.preventDefault(); // SPA page reload ko roka
 
-    alert(`New Task Created: ${taskName}`);
-    setTaskName(""); // Form clear kar diya submit ke baad
+    // Modern React Test: Event Pooling nahi hai, isliye setTimeout mein 'e.type' safe chalega!
+    setTimeout(() => {
+      console.log("Async Event Type Access Success:", e.type); // 'submit' print hoga safely
+      alert(`Form Submitted with Text: ${text}`);
+    }, 500);
+  };
+
+  // 3. PROPAGATION (Bubbling isolation testing)
+  const handleParentCardClick = () => {
+    console.log("❌ BUG: Parent Card Triggered! (Bubbling ki wajah se)");
+  };
+
+  const handleChildButtonClick = (e) => {
+    // Is line ki wajah se event parent card tak bubble nahi kar payega
+    e.stopPropagation(); 
+    console.log("✅ SAFE: Only Child Button Clicked!");
   };
 
   return (
-    <div style={{ padding: '20px', border: '1px solid #333', width: '350px', borderRadius: '8px' }}>
-      <h3>📝 Create New Task</h3>
-      
-      {/* Form submit event handle kiya */}
-      <form onSubmit={handleFormSubmit}>
-        <input 
-          type="text" 
-          placeholder="Enter task title..." 
-          value={taskName}
-          onChange={handleInputChange} // Input type event handle kiya
-          style={{ width: '100%', padding: '8px', marginBottom: '10px', boxSizing: 'border-box' }}
-        />
+    <div style={{ padding: '30px', fontFamily: 'Arial' }}>
+      <h1>⚡ Ultimate React Event Engine</h1>
+
+      {/* Form Handler */}
+      <form onSubmit={handleSubmit} style={{ marginBottom: '30px' }}>
+        <input type="text" value={text} onChange={handleChange} placeholder="Type text..." />
+        <button type="submit">Submit</button>
+      </form>
+
+      {/* Propagation Box */}
+      <div 
+        onClick={handleParentCardClick} 
+        style={{ padding: '20px', backgroundColor: '#f4f4f4', border: '1px solid #ccc', cursor: 'pointer' }}
+      >
+        <h3>Parent Project Card (Click Me)</h3>
         
         <button 
-          type="submit" 
-          style={{ width: '100%', padding: '10px', backgroundColor: '#007bff', color: 'white', border: 'none', cursor: 'pointer' }}
+          onClick={handleChildButtonClick} 
+          style={{ backgroundColor: '#ff4d4d', color: 'white', padding: '10px' }}
         >
-          Add Task
+          Child Action Button (Isolated)
         </button>
-      </form>
+      </div>
     </div>
   );
 }
 
-export default TaskForm;
+export default MasterEventManager;
